@@ -1,0 +1,218 @@
+body {
+	margin: 0;
+	font-family: 'Lato', sans-serif;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+header {
+	display: flex;
+	height: 60px;
+	width: 100%;
+	background-color: #e0e0e0;
+	justify-content: space-between;
+	align-items:center;
+}
+
+header img{
+	width:30px;
+	height: 27.63px;
+	margin-left: 22px;
+}
+header span{
+	font-size: 20px;
+	font-weight:600;
+	color: #333;
+}
+
+
+.menu-sanduiche div {
+	width: 25px;
+	height: 2px;
+	background-color: black;
+	margin: 6px 0;
+	margin-right: 22px;
+}
+
+.menu-responsivo .menu-hidden ul{
+	display:none;
+	list-style-type: none;
+	background-color: #333;
+	font-size: 16px;
+	color: #fff;
+	position: fixed;
+	height: 100%;
+	width: 85%;
+	right: 0px;
+	top: 0;
+	margin-top: 0;
+	padding: 20px 0px;
+}
+
+.menu-responsivo:hover ul{
+	display: block;
+}
+
+.menu-responsivo ul #menu-exit {
+	text-align: left;
+	margin: 7px 0px;
+	padding: 0 20px;
+}
+
+.menu-responsivo ul #item-menu {
+	display:flex;
+	height: 32px;
+	text-align: right;
+	margin: 7px 0px;
+	padding: 0 20px;
+	font-size: 16px;
+	font-weight: 600;
+	justify-content:flex-end;
+	align-items:center;
+}
+
+.menu-responsivo #item-menu:hover{
+	color: #333;
+	background-color: #c4c4c4; 
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	margin: 26px 20px;
+}
+.container #container-top {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;	
+	border-bottom: 1px solid #979797;
+	
+}
+
+.form-box {
+	display: flex;
+	height: 100%px;
+	width: 100%;
+	padding-top: 20px;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+
+}
+
+h3{
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.form-box div {
+	display: flex;
+	height: 60px;
+	width: 100%;
+	justify-content: space-around;
+	flex-direction: column;
+	align-content: stretch;
+	padding-bottom: 5px;
+}
+
+.form-box select {
+	height: 32px;
+	font-family: 'Lato', sans-serif;
+	color: #888888;
+}
+
+.form-box input {
+	height: 25px;
+	font-family: 'Lato', sans-serif;
+	color: #888888;
+}
+
+.form-box button {
+	height: 32px;
+	width: 100%;
+	background-color: #333333;
+	color: #ffff;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	border: none;
+	border-radius: 5px;
+}
+
+.container-bottom {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 30px;
+	width: 95vw;
+}
+
+.extratoTitulo {
+	font-size: 14px;
+	font-weight: 700;
+	display: flex;
+	justify-content: space-around;
+	height: 60px;
+	width: 95%;
+	align-items: center;
+	border-bottom: 1px solid #979797;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table th{
+	height: 30px;
+}
+
+table td {
+	height: 30px;
+}
+
+.tr-border {
+	text-align: left;
+	border-bottom: 1px solid #979797
+}
+
+.tr-right {
+	text-align: right;
+}
+
+.tr-left {
+	text-align: left;
+}
+
+.tr-fim {
+	text-align: center;
+}
+
+table td #td-footer{
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.container-bottom p{
+	align-self: flex-end;
+	font-size: 10px;
+	font-weight: 400;
+}
+
+footer {
+	border-bottom: 8px solid #333;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+
+@media (max-width: 768px) {
+	#container-top h3{
+		display: none;
+	}
