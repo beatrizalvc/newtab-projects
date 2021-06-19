@@ -12,25 +12,30 @@
 </head>
 <body>
     <header>
-        <img src="logo.png" />
-        <span>Controle de Vendas</span>
-        <div class="menu-responsivo">
-            <div class="menu-sanduiche">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="menu-hidden">
-                <ul>
-                    <li id="menu-exit">X</li>
-                    <li id="item-menu">Cadastro de transações</li>
-                    <li id="item-menu">Limpar dados</li>
-                    <li id="item-menu">Salvar no servidor</li>
-                </ul>
-            </div>
 
+        <section>
+            <img src="logo.png" />
+            <span>Controle Financeiro</span>
 
-        </div>
+            <div class="menu-responsivo">
+                <div class="menu-sanduiche">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+                <div class="menu-hidden">
+                    <ul>
+                        <li id="menu-exit">X</li>
+                        <li id="item-menu">Cadastro de transações</li>
+                        <li id="item-menu">Limpar dados</li>
+                        <li id="item-menu">Salvar no servidor</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        
 
     </header>
     <div class="container">
@@ -49,7 +54,7 @@
                     <label>Nome da Mercadoria</label>
                     <input type="text" placeholder="Imput" />
                 </div>
-                <br/>
+                <br />
                 <div>
                     <label>Valor</label>
                     <input placeholder="R$0,00" />
@@ -58,7 +63,7 @@
                     <button>Adicionar Transação</button>
                 </div>
             </form>
-        </div> 
+        </div>
         <div class="container-bottom">
             <h3>Extrato de transações</h3>
             <table>
@@ -87,16 +92,21 @@
                     <td class="tr-left" id="td-footer"> Total </td>
                     <td class="tr-right" id="td-footer"> R$ 12.909,99 </td>
                 </tr>
-               
-            </table>
-            <p>[LUCRO]</p>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="tr-right">[LUCRO]</td>
 
-        </div>       
+                </tr>
+
+            </table>
+
+        </div>
         <footer></footer>
-        
-    
- 
+
+
+
     </div>
-    
+
 </body>
 </html>
