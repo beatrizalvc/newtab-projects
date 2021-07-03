@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle Financeiro</title>
+    <script type="text/javascript" src="script.js"></script>
 
 </head>
 <body>
@@ -35,7 +36,7 @@
 
             </div>
         </section>
-        
+
 
     </header>
     <div class="container">
@@ -44,62 +45,78 @@
             <form class="form-box">
                 <div>
                     <label>Tipo de transação</label>
-                    <select name="transacoes">
+                    <select type="text" id="transacoes">
                         <option value="Compra" selected>Compra</option>
                         <option value="Venda">Venda</option>
                     </select>
+                    <div></div>
+
                 </div>
                 <br />
                 <div>
                     <label>Nome da Mercadoria</label>
-                    <input type="text" placeholder="Imput" />
+                    <input type="text" id="nome-mercadoria" placeholder="Imput" />
+                    <div id="alerta-nome"></div>
                 </div>
                 <br />
                 <div>
                     <label>Valor</label>
-                    <input placeholder="R$0,00" />
+                    <input id="valor-mercadoria" placeholder="R$0,00" onkeypress="verificaTecla(event)" />
+                    <div id="alerta-valor"></div>
+                    <div id="alerta-envio"></div>
                 </div>
                 <div>
-                    <button>Adicionar Transação</button>
+                    <button type="button" onclick="validarCadastro()">Adicionar Transação</button>
+                    
                 </div>
             </form>
         </div>
         <div class="container-bottom">
             <h3>Extrato de transações</h3>
-            <table>
-                <tr class="tr-border">
-                    <th></th>
-                    <th> Mercadoria </th>
-                    <th class="tr-fim"> Valor </th>
-                </tr>
-                <tr class="tr-border">
-                    <td> + </td>
-                    <td> Lorem ipsum dolor sit amet consectetur </td>
-                    <td class="tr-right"> R$ 12.999,99 </td>
-                </tr>
-                <tr class="tr-border">
-                    <td> - </td>
-                    <td> Quis nostrud exercitation </td>
-                    <td class="tr-right"> R$ 99,99 </td>
-                </tr>
-                <tr class="tr-border">
-                    <td> + </td>
-                    <td> Lorem ipsum  </td>
-                    <td class="tr-right"> R$ 9,99 </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="tr-left" id="td-footer"> Total </td>
-                    <td class="tr-right" id="td-footer"> R$ 12.909,99 </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td class="tr-right">[LUCRO]</td>
+            <div id="table">
+                <table>
+                    <thead>
 
-                </tr>
+                        <tr class="tr-border">
+                            <th></th>
+                            <th> Mercadoria </th>
+                            <th class="tr-fim"> Valor </th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                                        <!--<tr class="tr-border">
+                            <td> + </td>
+                            <td> Lorem ipsum dolor sit amet consectetur </td>
+                            <td class="tr-right"> R$ 12.999,99 </td>
+                        </tr>
+                        <tr class="tr-border">
+                            <td> - </td>
+                            <td> Quis nostrud exercitation </td>
+                            <td class="tr-right"> R$ 99,99 </td>
+                        </tr>
+                        <tr class="tr-border">
+                            <td> + </td>
+                            <td> Lorem ipsum  </td>
+                            <td class="tr-right"> R$ 9,99 </td>
+                        </tr>-->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td></td>
+                            <td class="tr-left" id="td-footer"> Total </td>
+                            <td class="tr-right" id="td-footer"> R$ 12.909,99 </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td class="tr-right">[LUCRO]</td>
 
-            </table>
+                        </tr>
+                    </tfoot>
+
+                </table>
+            </div>
 
         </div>
         <footer></footer>
@@ -107,6 +124,7 @@
 
 
     </div>
-
+    
 </body>
+
 </html>
