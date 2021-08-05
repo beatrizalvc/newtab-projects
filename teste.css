@@ -88,9 +88,10 @@ header {
 		align-items:center;
 	}
 
-	.menu-responsivo #item-menu:hover{
+
+	.menu-responsivo #item-menu:hover {
 		color: #333;
-		background-color: #c4c4c4; 
+		background-color: #c4c4c4;
 	}
 
 /*HEADER FINALIZA*/
@@ -167,7 +168,14 @@ header {
 		border-radius: 5px;
 	}
 
-	#alerta-nome{
+	#alerta-transacao {
+		width: contain;
+		font-size: 14px;
+		color: red;
+		font-weight: 900;
+	}
+
+	#alerta-nome {
 		width: contain;
 		font-size: 14px;
 		color: red;
@@ -175,6 +183,14 @@ header {
 	}
 
 	#alerta-valor {
+		width: fit-content;
+		font-size: 14px;
+		color: red;
+		font-weight: 900;
+	}
+
+
+	#alerta-transacao {
 		width: fit-content;
 		font-size: 14px;
 		color: red;
@@ -233,16 +249,21 @@ header {
 	}
 
 	.tr-fim {
-		text-align: center;
+		text-align: right;
 	}
 
 	table td #td-footer{
 		font-size: 14px;
-		font-weight: 700;
+		font-weight: bold;
+	}
+
+
+
+	#td-footer {
+		font-weight: bold;
 	}
 
 /*CONTAINER-BOTTOM FINALIZA*/
-
 footer {
 	border-bottom: 8px solid #333;
 	position: fixed;
@@ -251,6 +272,8 @@ footer {
 	width: 100%;
 	text-align: center;
 }
+
+
 
 
 /*CONTAINER-BOTTOM FINALIZA*/

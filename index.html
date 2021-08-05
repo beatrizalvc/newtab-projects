@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400&display=swap" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Controle Financeiro</title>
-    <script type="text/javascript" src="script.js"></script>
+    
 
 </head>
 <body>
@@ -29,8 +29,8 @@
                     <ul>
                         <li id="menu-exit">X</li>
                         <li id="item-menu">Cadastro de transações</li>
-                        <li id="item-menu">Limpar dados</li>
-                        <li id="item-menu">Salvar no servidor</li>
+                        <li id="item-menu" onclick="LimparDados(); window.location.reload()">Limpar dados</li>
+                        <li id="item-menu" >Salvar no servidor</li>
                     </ul>
                 </div>
 
@@ -43,25 +43,25 @@
         <div id="container-top">
             <h3>Nova Transação</h3>
             <form class="form-box">
-                <div>
+                <div id="form-box-item">
                     <label>Tipo de transação</label>
                     <select type="text" id="transacoes">
-                        <option value="Compra" selected>Compra</option>
+                        <option value=" ">PREENCHA O CAMPO</option>
+                        <option value="Compra" >Compra</option>
                         <option value="Venda">Venda</option>
                     </select>
-                    <div></div>
-
+                   <div id="alerta-transacao"> </div>
                 </div>
                 <br />
-                <div>
+                <div id="form-box-item">
                     <label>Nome da Mercadoria</label>
                     <input type="text" id="nome-mercadoria" placeholder="Imput" />
                     <div id="alerta-nome"></div>
                 </div>
                 <br />
-                <div>
+                <div id="form-box-item">
                     <label>Valor</label>
-                    <input id="valor-mercadoria" placeholder="R$0,00" onkeypress="verificaTecla(event)" />
+                    <input id="valor-mercadoria" placeholder="R$0,00"  type="number" step="0.01" name="quantity" min="0.01"/>
                     <div id="alerta-valor"></div>
                     <div id="alerta-envio"></div>
                 </div>
@@ -84,7 +84,7 @@
                         </tr>
                     </thead>
                     
-                    <tbody>
+                    <tbody id="lista">
                                         <!--<tr class="tr-border">
                             <td> + </td>
                             <td> Lorem ipsum dolor sit amet consectetur </td>
@@ -102,15 +102,15 @@
                         </tr>-->
                     </tbody>
                     <tfoot>
-                        <tr>
+                        <tr id="footer">
                             <td></td>
-                            <td class="tr-left" id="td-footer"> Total </td>
-                            <td class="tr-right" id="td-footer"> R$ 12.909,99 </td>
+                            <td class="tr-left" id="td-footer" > Total </td>
+                        
                         </tr>
                         <tr>
                             <td></td>
                             <td></td>
-                            <td class="tr-right">[LUCRO]</td>
+                            <td class="tr-right" id="lucro-prejuizo"></td>
 
                         </tr>
                     </tfoot>
@@ -124,7 +124,7 @@
 
 
     </div>
-    
+    <script type="text/javascript" src="script.js"></script>
 </body>
 
 </html>
