@@ -30,7 +30,7 @@
                         <li id="menu-exit">X</li>
                         <li id="item-menu">Cadastro de transações</li>
                         <li id="item-menu" onclick="LimparDados(); window.location.reload()">Limpar dados</li>
-                        <li id="item-menu" >Salvar no servidor</li>
+                        <li id="item-menu" onclick="salvarServidor()">Salvar no servidor</li>
                     </ul>
                 </div>
 
@@ -61,12 +61,12 @@
                 <br />
                 <div id="form-box-item">
                     <label>Valor</label>
-                    <input id="valor-mercadoria" placeholder="R$0,00"  type="number" step="0.01" name="quantity" min="0.01"/>
+                    <input id="valor-mercadoria" placeholder="R$0,00"  />
                     <div id="alerta-valor"></div>
                     <div id="alerta-envio"></div>
                 </div>
                 <div>
-                    <button type="button" onclick="validarCadastro()">Adicionar Transação</button>
+                    <button type="button" style="cursor:pointer" onclick="validarCadastro()">Adicionar Transação</button>
                     
                 </div>
             </form>
@@ -105,7 +105,7 @@
                         <tr id="footer">
                             <td></td>
                             <td class="tr-left" id="td-footer" > Total </td>
-                        
+                            <td class="tr-right" id="total"></td>
                         </tr>
                         <tr>
                             <td></td>

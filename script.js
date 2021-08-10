@@ -1,15 +1,14 @@
 /*INÍCIO MÁSCARA DO CAMPO VALOR*/
+
 function verificaTecla(e) {
     e.preventDefault();
     console.log(e);
     if ("0123456789".indexOf(e.key) != -1) {
         document.querySelector('input[id="valor-mercadoria"]').value += e.key
-        document.querySelector('input[name=valor]').value += e.key;
+       
     }
 
 }
-
-
 
 /*FIM MÁSCARA DO CAMPO VALOR*/
 
@@ -100,14 +99,15 @@ function validarCadastro() {
         document.getElementById("nome-mercadoria").value = "";
         document.getElementById("valor-mercadoria").value = "";
 
-    
-        window.location.reload();
+        listarDados();
+        // window.location.reload();
 
     }
 
     return false
     
 }
+
 
 /*FIM VALIDAÇÃODE FORMULÁRIO  E LOCAL STORAGE*/
 
@@ -134,8 +134,9 @@ function listarDados() {
 
     }
 
-    document.getElementById('footer').innerHTML +=
-    `<td class="tr-right" id="td-footer">  R$ ` + total + `</td>`
+    let tdTotal = document.getElementById('total');
+    tdTotal.innerHTML = `<strong>R$ ` + total + `</strong>`;
+
 
         if (total > 0) {
             lucroPrejuizo.innerHTML = "[LUCRO]"
@@ -160,10 +161,86 @@ function listarDados() {
            listarDados()
 
        }
+       listarDados();
 
    }
 
 /*FIM LIMPAR TABELA*/
 
+/* INÍCIO SALVAR DADOS NO SERVIDOR */
 
-listarDados()
+const aluno = "2461"; //identificador do aluno - 4 ultimos números do cpf
+function salvarServidor() {
+      fetch("https://api.airtable.com/v0/appRNtYLglpPhv2QD/Historico", {
+        headers: {
+            Authorization: "Bearer key2CwkHb0CKumjuM"
+        }
+    })
+        .then((response) => { return response.json() })
+        .then((responseJson) => {
+            exist = responseJson.records.filter((record) => {
+                if (aluno == record.fields.Aluno) {
+                    return true
+                }
+                return false
+            })
+            if (exist.length == 0) { 
+                creat() 
+            } else { 
+                update(exist[0].id) 
+            }
+        })
+};
+
+/* FIM SALVAR DADOS NO SERVIDOR */
+
+/* INÍCIO CRIAR SERVIDOR */
+
+function creat() {
+    let listaJson = JSON.stringify(lista);
+    fetch("https://api.airtable.com/v0/appRNtYLglpPhv2QD/Historico", {
+        method: "POST",
+        headers: {
+            Authorization: "Bearer key2CwkHb0CKumjuM",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "records": [
+                {
+                    "fields": {
+                        "Aluno": aluno,
+                        "Json": listaJson
+                    }
+                }
+            ]
+        })
+    })
+}
+
+/* FIM CRIAR SERVIDOR */
+
+/* INÍCIO ATUALIZAR DADO NO SERVIDOR */
+
+function update(id) {
+    let listaJson = JSON.stringify(lista);
+    fetch("https://api.airtable.com/v0/appRNtYLglpPhv2QD/Historico", {
+        method: "PATCH",
+        headers: {
+            Authorization: "Bearer key2CwkHb0CKumjuM",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            "records": [
+                {
+                    "id": id,
+                    "fields": {
+                        "Aluno": aluno,
+                        "Json": listaJson
+                    }
+                }
+            ]
+        })
+    })
+}
+
+/* FIM ATUALIZAR DADO NO SERVIDOR */
